@@ -1,0 +1,39 @@
+* {
+    color: #ffffff;  
+ }
+ body {
+     background-color: #000000;
+     font-size: 18px;
+     
+ 
+ }
+ 
+ header {
+     width: 100%;
+     max-width: 960px;
+     height: 100px;
+     margin: 0 auto;
+     clear: both;
+ 
+ }
+ 
+ h1 {
+     text-align: center;
+     color: #ff0000;
+     font-size: 50px;
+     font-weight: bold;
+ }
+ 
+ main {
+     width: 100%;
+     max-width: 960px;
+     height: auto;
+     margin: 0 auto;
+ }
+
+.crystal-image {
+    width: 200px;
+    height: 200px;
+}
+
+
