@@ -5,6 +5,7 @@ var imageCrystal = [];
 var counter = 0;
 var wins = 0;
 var losses = 0;
+var numberOptions = [];
 
 
 picImage = ["amethyst", "crystal-glasses", "gems", "glass", "rock-crystal", "tree"];
@@ -28,7 +29,7 @@ function reset() {
 
   //  var numberOptions = [Math.floor(Math.random() * picImage.length)];
 
-  var numberOptions = [10, 5, 3, 7];
+  numberOptions = [10, 5, 3, 7];
 
   // Next we create a for loop to create crystals for every numberOption.
   for (var i = 0; i < numberOptions.length; i++) {
