@@ -13,7 +13,7 @@ reset();
 
 function reset() {
 
-  targetNumber = 53;
+  targetNumber = Math.floor(Math.random() * 100) + 19;
   showPic = [];
   images = [];
   counter = 0;
