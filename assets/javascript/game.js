@@ -11,43 +11,8 @@ picImage = ["amethyst", "crystal-glasses", "gems", "glass", "rock-crystal", "tre
 
 reset();
 
-// This time, our click event applies to every single crystal on the page. Not just one.
-$(".crystal-image").on("click", function () {
-
-  // Determining the crystal's value requires us to extract the value from the data attribute.
-  // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-  // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-  // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-
-  var crystalValue = ($(this).attr("data-crystalvalue"));
-  crystalValue = parseInt(crystalValue);
-  console.log(crystalValue);
-  // We then add the crystalValue to the user's "counter" which is a global variable.
-  // Every click, from every crystal adds to the global counter.
-  counter += crystalValue;
-
-  // All of the same game win-lose logic applies. So the rest remains unchanged.
-  $("#counter-total").text(counter);
-  // alert("New score: " + counter);
-
-  if (counter === targetNumber) {
-    // alert("You win!");
-    wins++;
-    $("#wins-total").text(wins);
-    reset();
-  }
-
-  else if (counter >= targetNumber) {
-    // alert("You lose!!");
-    losses++;
-    $("#losses-total").text(losses);
-    reset();
-  }
-
-});
-
 function reset() {
-  
+
   targetNumber = 53;
   showPic = [];
   images = [];
@@ -95,4 +60,44 @@ function reset() {
     // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
     $("#crystals").append(imageCrystal);
   }
+
+  setUpCrystalOnClick();
+
 };
+
+function setUpCrystalOnClick() {
+  // This time, our click event applies to every single crystal on the page. Not just one.
+  $(".crystal-image").on("click", function () {
+
+    // Determining the crystal's value requires us to extract the value from the data attribute.
+    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
+    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
+    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
+
+    var crystalValue = ($(this).attr("data-crystalvalue"));
+    crystalValue = parseInt(crystalValue);
+    console.log(crystalValue);
+    // We then add the crystalValue to the user's "counter" which is a global variable.
+    // Every click, from every crystal adds to the global counter.
+    counter += crystalValue;
+
+    // All of the same game win-lose logic applies. So the rest remains unchanged.
+    $("#counter-total").text(counter);
+    // alert("New score: " + counter);
+
+    if (counter === targetNumber) {
+      // alert("You win!");
+      wins++;
+      $("#wins-total").text(wins);
+      reset();
+    }
+
+    else if (counter >= targetNumber) {
+      // alert("You lose!!");
+      losses++;
+      $("#losses-total").text(losses);
+      reset();
+    }
+
+  });
+}
