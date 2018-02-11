@@ -22,10 +22,9 @@ function reset() {
   $("#crystals").text("");
   $("#counter-total").text("");
   $("#number-to-guess").text(targetNumber);
+  foundPic = false;
 
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
-
-  // We begin by expanding our array to include four options.
 
   //  var numberOptions = [Math.floor(Math.random() * picImage.length)];
 
@@ -34,10 +33,30 @@ function reset() {
   // Next we create a for loop to create crystals for every numberOption.
   for (var i = 0; i < numberOptions.length; i++) {
 
-    pic = picImage[Math.floor(Math.random() * picImage.length)];
+    
+    do {
+      // text += "<br>The number is " + i;
+      pic = picImage[Math.floor(Math.random() * picImage.length)];
+
+      if (images.indexOf[pic] < -1) {
+        foundPic = false;
+        console.log(images.indexOf[pic])
+        console.log(foundPic);
+      }
+
+      else {
+        foundPic = true;
+        console.log(foundPic);
+      }
+      // i++;
+
+    }
+    while (!foundPic) {
+      console.log("HEY " + pic);
+    }
+    ;
 
     // For each iteration, we will create an imageCrystal
-    // showPic = showPic +
 
     images.push(pic);
     console.log("images: " + this.images);
